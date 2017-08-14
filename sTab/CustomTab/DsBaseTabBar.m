@@ -25,7 +25,7 @@
 
     if (self = [super initWithFrame:frame]) {
         self.userInteractionEnabled = YES;
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.7];
         [self itemImageV];
         [self itemLb];
         [self redPoint];
@@ -186,8 +186,8 @@
     if (!self.isChangeTabTitles) {
         itemV.itemLb.text = nav.tabBarItem.title;
     }
-    itemV.itemLb.textColor = [UIColor yellowColor];//DS_COLOR_HEXCOLOR(@"3b3c4e");
-    _preView.itemLb.textColor = [UIColor blackColor];//DS_COLOR_HEXCOLOR(@"bbbbbb");
+    itemV.itemLb.textColor = [UIColor blackColor];//DS_COLOR_HEXCOLOR(@"3b3c4e");
+    _preView.itemLb.textColor = [UIColor grayColor];//DS_COLOR_HEXCOLOR(@"bbbbbb");
     _preView = itemV;
     _preNav = nav;
     self.selectedIndex = itemV.tag - TAB_BASEITEM_TAG;
