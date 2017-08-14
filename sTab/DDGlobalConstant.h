@@ -68,41 +68,41 @@
 #define DS_APP_DELEGATE                     ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
 
-
-//tabBarColor
-#define DS_TABBAR_NORMAL                    DS_COLOR_HEXCOLOR(@"ffffff")
-#define DS_TABBAR_NIGHT                     [DS_COLOR_HEXCOLOR(@"000000") colorWithAlphaComponent:0.2]
-//backgroundColor
-#define DS_BACKGROUNDCOLOR_NORMAL          DS_COLOR_HEXCOLOR(@"ffffff")
-#define DS_BACKGROUNDCOLOR_NIGHT           [DS_COLOR_HEXCOLOR(@"000000") colorWithAlphaComponent:0.2]
-//textColor
-#define DS_TEXTCOLOR_NORMAL                 DS_COLOR_HEXCOLOR(@"9b2a4c")
-#define DS_TEXTCOLOR_NIGHT                  DS_COLOR_HEXCOLOR(@"bbbbbb")
-
-//global && normal->night
-#define DS_GLOBAL_ISNIGHT                   @"DS_GLOBAL_ISNIGHT"
-#define DS_GLOBAL_TABBARCOLOR               [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? DS_TABBAR_NIGHT : DS_TABBAR_NORMAL
-#define DS_GLOBAL_BACKGROUNDCOLOR           [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? DS_BACKGROUNDCOLOR_NIGHT : DS_BACKGROUNDCOLOR_NORMAL
-#define DS_GLOBAL_TEXTCOLOR                 [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? DS_TEXTCOLOR_NIGHT : DS_TEXTCOLOR_NORMAL
-
-
+//
+////tabBarColor
+//#define DS_TABBAR_NORMAL                    DS_COLOR_HEXCOLOR(@"ffffff")
+//#define DS_TABBAR_NIGHT                     [DS_COLOR_HEXCOLOR(@"000000") colorWithAlphaComponent:0.2]
+////backgroundColor
+//#define DS_BACKGROUNDCOLOR_NORMAL          DS_COLOR_HEXCOLOR(@"ffffff")
+//#define DS_BACKGROUNDCOLOR_NIGHT           [DS_COLOR_HEXCOLOR(@"000000") colorWithAlphaComponent:0.2]
+////textColor
+//#define DS_TEXTCOLOR_NORMAL                 DS_COLOR_HEXCOLOR(@"9b2a4c")
+//#define DS_TEXTCOLOR_NIGHT                  DS_COLOR_HEXCOLOR(@"bbbbbb")
+//
+////global && normal->night
+//#define DS_GLOBAL_ISNIGHT                   @"DS_GLOBAL_ISNIGHT"
+//#define DS_GLOBAL_TABBARCOLOR               [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? DS_TABBAR_NIGHT : DS_TABBAR_NORMAL
+//#define DS_GLOBAL_BACKGROUNDCOLOR           [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? DS_BACKGROUNDCOLOR_NIGHT : DS_BACKGROUNDCOLOR_NORMAL
+//#define DS_GLOBAL_TEXTCOLOR                 [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? DS_TEXTCOLOR_NIGHT : DS_TEXTCOLOR_NORMAL
+//
+//
 
 #define DS_APP_SIZE                             [[UIScreen mainScreen] bounds].size
 #define DS_APP_WIDTH                            DS_APP_SIZE.width
 #define DS_APP_HEIGHT                           DS_APP_SIZE.height
-
-
-
+//
+//
+//
 #define DS_APP_FONT(fontSize)               [UIFont fontWithName:@"Helvetica" size:fontSize ]
 #define DS_APP_BOLDFONT(fontSize)           [UIFont fontWithName:@"Helvetica-Bold" size:fontSize ]
 #define DS_APPLIGHTFONT(fontSize)          [UIFont fontWithName:@"Helvetica-Light" size:fontSize ]
+////
+//
+//#define DS_COLOR_BACKGROUND                DS_COLOR_HEXCOLOR(@"0xf0f0f0")
+//#define DS_COLOR_RANDOM                    DS_COLOR_RGBA(arc4random()%254, arc4random()%254, arc4random()%254, 0.5)
 
 
-#define DS_COLOR_BACKGROUND                DS_COLOR_HEXCOLOR(@"0xf0f0f0")
-#define DS_COLOR_RANDOM                    DS_COLOR_RGBA(arc4random()%254, arc4random()%254, arc4random()%254, 0.5)
-
-
-#define DS_COLOR_HEXCOLOR(hexStr)             [UIColor dd_colorWithHexString:hexStr]
+//#define DS_COLOR_HEXCOLOR(hexStr)             [UIColor dd_colorWithHexString:hexStr]
 #define DS_COLOR_RGBA(_r, _g, _b, _a)       [UIColor colorWithRed:_r/255.f green:_g/255.f blue:_b/255.f alpha:_a]
 
 #define DS_COLOR_RGB(_r, _g, _b)    DS_COLOR_RGBA(_r, _g, _b, 1)

@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DsBaseTabBar.h"
+
+
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+@property (nonatomic, strong) DsBaseTabBar *rootTab;
 
 @property (strong, nonatomic) UIWindow *window;
 

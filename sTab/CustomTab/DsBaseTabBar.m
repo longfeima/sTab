@@ -8,6 +8,7 @@
 
 #import "DsBaseTabBar.h"
 #import <UIImageView+WebCache.h>
+#import "DDGlobalConstant.h"
 #import <objc/runtime.h>
 @interface DsCustomBarItemView ()
 
@@ -24,7 +25,7 @@
 
     if (self = [super initWithFrame:frame]) {
         self.userInteractionEnabled = YES;
-        self.backgroundColor = DS_GLOBAL_TABBARCOLOR;
+        self.backgroundColor = [UIColor whiteColor];
         [self itemImageV];
         [self itemLb];
         [self redPoint];
@@ -85,7 +86,7 @@
         _itemLb.frame = CGRectMake(frame.size.width/2 - 15, CGRectGetMaxY(self.itemImageV.frame) + 3, 26, 10);
         _itemLb.textAlignment = 1;
         _itemLb.font = DS_APP_FONT(10);
-        _itemLb.textColor = DS_COLOR_HEXCOLOR(@"bbbbbb");
+        _itemLb.textColor = [UIColor whiteColor];//DS_COLOR_HEXCOLOR(@"bbbbbb");
         [self addSubview:_itemLb];
     }
     return _itemLb;
@@ -135,7 +136,7 @@
 //        if (i == self.selectIndex) {
 //            itemV.backgroundColor = DS_GLOBAL_TABBARCOLOR;
 //        }else{
-            itemV.backgroundColor = DS_GLOBAL_TABBARCOLOR;
+        itemV.backgroundColor = [UIColor whiteColor];//DS_GLOBAL_TABBARCOLOR;
 //        }
     }
     
@@ -160,7 +161,7 @@
         itemView.tag = TAB_BASEITEM_TAG + i;
         if (i==0) {
             itemView.itemImageV.image = nav.tabBarItem.selectedImage;
-            itemView.itemLb.textColor = DS_COLOR_HEXCOLOR(@"3b3c4e");
+            itemView.itemLb.textColor = [UIColor blackColor];//DS_COLOR_HEXCOLOR(@"3b3c4e");
             self.selectIndex = 0;
             _preNav = nav;
             _preView =itemView;
@@ -185,8 +186,8 @@
     if (!self.isChangeTabTitles) {
         itemV.itemLb.text = nav.tabBarItem.title;
     }
-    itemV.itemLb.textColor = DS_COLOR_HEXCOLOR(@"3b3c4e");
-    _preView.itemLb.textColor = DS_COLOR_HEXCOLOR(@"bbbbbb");
+    itemV.itemLb.textColor = [UIColor yellowColor];//DS_COLOR_HEXCOLOR(@"3b3c4e");
+    _preView.itemLb.textColor = [UIColor blackColor];//DS_COLOR_HEXCOLOR(@"bbbbbb");
     _preView = itemV;
     _preNav = nav;
     self.selectedIndex = itemV.tag - TAB_BASEITEM_TAG;
@@ -296,7 +297,7 @@
     objc_setAssociatedObject(self, (__bridge const void *)(TAB_KEY_CHANGE_IMAGES), icons, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     for (int i = 0; i < array.count; i++) {
         DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
-        itemV.backgroundColor = DS_GLOBAL_TABBARCOLOR;
+        itemV.backgroundColor = [UIColor whiteColor];//DS_GLOBAL_TABBARCOLOR;
         if (icons.count > i && [icons[i] length] > 0) {
             [itemV.itemImageV sd_setImageWithURL:[NSURL URLWithString:icons[i]]];
         }
@@ -310,7 +311,7 @@
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
         DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
-        itemV.backgroundColor = DS_GLOBAL_TABBARCOLOR;
+        itemV.backgroundColor = [UIColor whiteColor];//DS_GLOBAL_TABBARCOLOR;
         if (titles.count > i && [titles[i] length] > 0) {
             itemV.itemLb.text = titles[i];
         }

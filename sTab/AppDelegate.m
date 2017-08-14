@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "sViewController1.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +19,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self createRootTab];
     return YES;
 }
+
+
+
+- (void)createRootTab{
+    
+    self.rootTab = [[DsBaseTabBar alloc]init];
+    
+    ViewController *pre = [[ViewController alloc]init];
+    UINavigationController *navPre = [[UINavigationController alloc]initWithRootViewController:pre];
+    UITabBarItem *preItem=[[UITabBarItem alloc]initWithTitle:@"预览" image:[UIImage imageNamed:@"icon_tabbar_pre_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_pre_press"]];
+    navPre.tabBarItem = preItem;
+    
+    
+    sViewController1 *home = [[sViewController1 alloc]init];
+    UINavigationController *navHome  = [[UINavigationController alloc]initWithRootViewController:home];
+    UITabBarItem *homeItem=[[UITabBarItem alloc]initWithTitle:@"主页" image:[UIImage imageNamed:@"icon_tabbar_home_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_home_press"]];
+    navHome.tabBarItem = homeItem;
+    //    [tab addViewController:sort title:@"分类" image:@"tabbar_account@2x" selectImage:@"tabbar_account_press@2x"];
+    
+    
+
+    self.rootTab.viewControllers = @[navPre, navHome];
+    self.rootTab.tabBar.barStyle = UIBarStyleBlack;
+    self.rootTab.tabBar.barTintColor = [UIColor whiteColor];
+    self.rootTab.delegate = self;
+    self.window.rootViewController = self.rootTab;
+    
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
