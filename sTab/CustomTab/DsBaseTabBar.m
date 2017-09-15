@@ -338,7 +338,7 @@
         DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
         itemV.backgroundColor = DS_COLOR_GLOBAL_TABBAR;
         if (icons.count > i && [icons[i] length] > 0) {
-            NSString *iconUrl = (i == self.selectIndex ? selectedIcons[i] : icons[i]);
+            NSString *iconUrl = (i == self.selectedIndex ? selectedIcons[i] : icons[i]);
             [itemV.itemImageV sd_setImageWithURL:[NSURL URLWithString:iconUrl]];
         }
     }
