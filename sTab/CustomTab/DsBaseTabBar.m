@@ -150,6 +150,11 @@
     [super viewDidAppear:animated];
     NSArray *array = self.viewControllers;
     NSString *index = objc_getAssociatedObject(self, (__bridge const void *)(@"index"));
+    [self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[DsCustomBarItemView class]]) {
+            [obj removeFromSuperview];
+        }
+    }];
     for (int i = 0; i<array.count; i++) {
         UINavigationController *nav = [array objectAtIndex:i];
         DsCustomBarItemView *itemView = [[DsCustomBarItemView alloc]initWithFrame:CGRectMake(i*DS_APP_SIZE_WIDTH/array.count, 0, DS_APP_SIZE_WIDTH/array.count, 49)];
@@ -173,6 +178,13 @@
             _preView =itemView;
         }
     }
+    
+    if (self.isChangeTabImagesAndSelectImages) {
+        NSArray *images = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_IMAGES));
+        NSArray *selectedImages = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_SELECTIMAGES));
+        [self changeTabImageWithIconsArray:images SeletedImageWithIconsArray:selectedImages];
+    }
+    
 }
 
 #pragma mark --------- 做点击判断&&取消tab跳转
