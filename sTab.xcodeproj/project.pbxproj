@@ -15,6 +15,13 @@
 		141791561F41A5A600C13C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 141791541F41A5A600C13C21 /* LaunchScreen.storyboard */; };
 		141791611F41A5A600C13C21 /* sTabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 141791601F41A5A600C13C21 /* sTabTests.m */; };
 		1417916C1F41A5A600C13C21 /* sTabUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417916B1F41A5A600C13C21 /* sTabUITests.m */; };
+		1417917E1F41A5FD00C13C21 /* DsBaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417917B1F41A5FD00C13C21 /* DsBaseTabBar.m */; };
+		1417917F1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417917D1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m */; };
+		141791821F41A61800C13C21 /* sViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 141791811F41A61800C13C21 /* sViewController1.m */; };
+		14C770DD1F6B7CB400847B03 /* DsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C770DA1F6B7CB400847B03 /* DsUtils.m */; };
+		14C770DE1F6B7CB400847B03 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C770DC1F6B7CB400847B03 /* RSAEncryptor.m */; };
+		14C770E21F6B7E6600847B03 /* UIColor+DDSC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C770E11F6B7E6600847B03 /* UIColor+DDSC.m */; };
+		BF982CA9A4AEAEDF26EB0316 /* libPods-sTab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47932B3ED39EB7AA6C1E249E /* libPods-sTab.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,24 @@
 		141791671F41A5A600C13C21 /* sTabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sTabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1417916B1F41A5A600C13C21 /* sTabUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sTabUITests.m; sourceTree = "<group>"; };
 		1417916D1F41A5A600C13C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1417917A1F41A5FD00C13C21 /* DsBaseTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsBaseTabBar.h; sourceTree = "<group>"; };
+		1417917B1F41A5FD00C13C21 /* DsBaseTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsBaseTabBar.m; sourceTree = "<group>"; };
+		1417917C1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+DsTabBarController.h"; sourceTree = "<group>"; };
+		1417917D1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+DsTabBarController.m"; sourceTree = "<group>"; };
+		141791801F41A61800C13C21 /* sViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sViewController1.h; sourceTree = "<group>"; };
+		141791811F41A61800C13C21 /* sViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sViewController1.m; sourceTree = "<group>"; };
+		148F2A071F41B5E6003C4CAE /* DDGlobalConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDGlobalConstant.h; sourceTree = "<group>"; };
+		14C770D71F6B7C2C00847B03 /* DsTabBarProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsTabBarProtocol.h; sourceTree = "<group>"; };
+		14C770D91F6B7CB400847B03 /* DsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsUtils.h; sourceTree = "<group>"; };
+		14C770DA1F6B7CB400847B03 /* DsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsUtils.m; sourceTree = "<group>"; };
+		14C770DB1F6B7CB400847B03 /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		14C770DC1F6B7CB400847B03 /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
+		14C770DF1F6B7D7D00847B03 /* Ds-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Ds-prefix.pch"; sourceTree = "<group>"; };
+		14C770E01F6B7E6600847B03 /* UIColor+DDSC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DDSC.h"; sourceTree = "<group>"; };
+		14C770E11F6B7E6600847B03 /* UIColor+DDSC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DDSC.m"; sourceTree = "<group>"; };
+		47932B3ED39EB7AA6C1E249E /* libPods-sTab.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sTab.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D151F854B24D2EDC4BC0C81 /* Pods-sTab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sTab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sTab/Pods-sTab.debug.xcconfig"; sourceTree = "<group>"; };
+		AD99E071CEEA178EF427AF9C /* Pods-sTab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sTab.release.xcconfig"; path = "Pods/Target Support Files/Pods-sTab/Pods-sTab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF982CA9A4AEAEDF26EB0316 /* libPods-sTab.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +111,8 @@
 				1417915F1F41A5A600C13C21 /* sTabTests */,
 				1417916A1F41A5A600C13C21 /* sTabUITests */,
 				141791441F41A5A600C13C21 /* Products */,
+				B8A2D669FD434B9DCD05685C /* Pods */,
+				C8EB5171CF1A9EDA9217C41A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +129,16 @@
 		141791451F41A5A600C13C21 /* sTab */ = {
 			isa = PBXGroup;
 			children = (
+				14C770DF1F6B7D7D00847B03 /* Ds-prefix.pch */,
+				14C770D81F6B7CB400847B03 /* Others */,
+				148F2A071F41B5E6003C4CAE /* DDGlobalConstant.h */,
+				141791791F41A5FD00C13C21 /* CustomTab */,
 				141791491F41A5A600C13C21 /* AppDelegate.h */,
 				1417914A1F41A5A600C13C21 /* AppDelegate.m */,
 				1417914C1F41A5A600C13C21 /* ViewController.h */,
 				1417914D1F41A5A600C13C21 /* ViewController.m */,
+				141791801F41A61800C13C21 /* sViewController1.h */,
+				141791811F41A61800C13C21 /* sViewController1.m */,
 				1417914F1F41A5A600C13C21 /* Main.storyboard */,
 				141791521F41A5A600C13C21 /* Assets.xcassets */,
 				141791541F41A5A600C13C21 /* LaunchScreen.storyboard */,
@@ -140,6 +174,48 @@
 			path = sTabUITests;
 			sourceTree = "<group>";
 		};
+		141791791F41A5FD00C13C21 /* CustomTab */ = {
+			isa = PBXGroup;
+			children = (
+				1417917A1F41A5FD00C13C21 /* DsBaseTabBar.h */,
+				1417917B1F41A5FD00C13C21 /* DsBaseTabBar.m */,
+				14C770D71F6B7C2C00847B03 /* DsTabBarProtocol.h */,
+				1417917C1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.h */,
+				1417917D1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m */,
+			);
+			path = CustomTab;
+			sourceTree = "<group>";
+		};
+		14C770D81F6B7CB400847B03 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				14C770E01F6B7E6600847B03 /* UIColor+DDSC.h */,
+				14C770E11F6B7E6600847B03 /* UIColor+DDSC.m */,
+				14C770D91F6B7CB400847B03 /* DsUtils.h */,
+				14C770DA1F6B7CB400847B03 /* DsUtils.m */,
+				14C770DB1F6B7CB400847B03 /* RSAEncryptor.h */,
+				14C770DC1F6B7CB400847B03 /* RSAEncryptor.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		B8A2D669FD434B9DCD05685C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D151F854B24D2EDC4BC0C81 /* Pods-sTab.debug.xcconfig */,
+				AD99E071CEEA178EF427AF9C /* Pods-sTab.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C8EB5171CF1A9EDA9217C41A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47932B3ED39EB7AA6C1E249E /* libPods-sTab.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +223,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 141791701F41A5A600C13C21 /* Build configuration list for PBXNativeTarget "sTab" */;
 			buildPhases = (
+				A43628AD460F9E843B60503B /* [CP] Check Pods Manifest.lock */,
 				1417913F1F41A5A600C13C21 /* Sources */,
 				141791401F41A5A600C13C21 /* Frameworks */,
 				141791411F41A5A600C13C21 /* Resources */,
+				C1937B05E95EE72BACB56331 /* [CP] Embed Pods Frameworks */,
+				DEE2DD4DD2BD08511097303E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,14 +347,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A43628AD460F9E843B60503B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1937B05E95EE72BACB56331 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sTab/Pods-sTab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEE2DD4DD2BD08511097303E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sTab/Pods-sTab-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1417913F1F41A5A600C13C21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141791821F41A61800C13C21 /* sViewController1.m in Sources */,
 				1417914E1F41A5A600C13C21 /* ViewController.m in Sources */,
 				1417914B1F41A5A600C13C21 /* AppDelegate.m in Sources */,
+				14C770DD1F6B7CB400847B03 /* DsUtils.m in Sources */,
 				141791481F41A5A600C13C21 /* main.m in Sources */,
+				14C770DE1F6B7CB400847B03 /* RSAEncryptor.m in Sources */,
+				14C770E21F6B7E6600847B03 /* UIColor+DDSC.m in Sources */,
+				1417917E1F41A5FD00C13C21 /* DsBaseTabBar.m in Sources */,
+				1417917F1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +555,10 @@
 		};
 		141791711F41A5A600C13C21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D151F854B24D2EDC4BC0C81 /* Pods-sTab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/sTab/Ds-prefix.pch";
 				INFOPLIST_FILE = sTab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddsoucai.service.sTab;
@@ -433,8 +568,10 @@
 		};
 		141791721F41A5A600C13C21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD99E071CEEA178EF427AF9C /* Pods-sTab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/sTab/Ds-prefix.pch";
 				INFOPLIST_FILE = sTab/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ddsoucai.service.sTab;
@@ -507,6 +644,7 @@
 				141791721F41A5A600C13C21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		141791731F41A5A600C13C21 /* Build configuration list for PBXNativeTarget "sTabTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +653,7 @@
 				141791751F41A5A600C13C21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		141791761F41A5A600C13C21 /* Build configuration list for PBXNativeTarget "sTabUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +662,7 @@
 				141791781F41A5A600C13C21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
