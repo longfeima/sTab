@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DsTabBarProtocol.h"
 
 @interface DsCustomBarItemView : UIView
 @end
@@ -14,11 +15,21 @@
 
 @interface DsBaseTabBar : UITabBarController
 
+@property (nonatomic, assign) id<DsTabBarProtocol>delegate;
+
+/**
+ tab items select index
+ */
+@property (nonatomic, assign) NSInteger selectIndex;
+
 @property (nonatomic, assign) NSInteger showRedPointAtIndex;
 /**
  @[@"0",@"1",@"1",@"0"]
  */
 @property (nonatomic, strong) NSArray<NSString *> *showRedPointsAtIndexs;
+
+
+
 
 
 - (void)showBadgeAtIndex:(NSInteger)index number:(NSString *)number;
@@ -29,6 +40,9 @@
 /**change icon if icons.count == 0 invalid icons.count can small than self.viewControlers.count*/
 - (void)changeTabImageWithIconsArray:(NSArray<NSString *> *)icons;
 
+/**change icon if icons.count == 0 invalid icons.count can small than self.viewControlers.count*/
+- (void)changeTabImageWithIconsArray:(NSArray<NSString *> *)icons SeletedImageWithIconsArray:(NSArray<NSString *> *)selectedIcons;
+
 /**change titles if icons.count == 0 invalid icons.count can small than self.viewControlers.count*/
 - (void)changeTabTitleWithTitlesArray:(NSArray<NSString *> *)titles;
 
@@ -36,7 +50,10 @@
 - (void)changeTabImageWithIconsArray:(NSArray<NSString *> *)icons Titles:(NSArray<NSString *> *)titles;
 
 - (void)cancelTabImagesChanges;
+- (void)cancelTabImagesAndSelectedImagesChanges;
 - (void)cancelTabTitlesChanges;
 - (void)cancelTabImagesAndTitlesChanges;
+
+
 
 @end

@@ -122,6 +122,89 @@
 
 
 
+#pragma mark ------- normal && night
+
+
+#define DS_COLOR_RANDOM                  [UIColor colorWithRed:arc4random()%244/255.0 green:arc4random()%244/255.0 blue:arc4random()%244/255.0 alpha:1]
+#define DS_COLOR_HEXCOLOR(hexStr)               [UIColor dd_colorWithHexString:hexStr]
+#define DS_DAYANDNIGHT(night,day)              [[DsUtils fetchFromUserDefaultsWithKey:DS_GLOBAL_ISNIGHT] boolValue] ? night : day
+
+//tabBarColor
+#define DS_COLOR_TABBAR_NIGHT                     [DS_COLOR_HEXCOLOR(@"ffffff") colorWithAlphaComponent:1]
+#define DS_COLOR_TABBAR_NORMAL                    DS_COLOR_HEXCOLOR(@"ffffff")
+
+//backgroundColor
+#define DS_COLOR_BACKGROUND_NIGHT               [DS_COLOR_HEXCOLOR(@"000000") colorWithAlphaComponent:0.6]
+#define DS_COLOR_BACKGROUND_NORMAL              DS_COLOR_HEXCOLOR(@"f1f1f1")
+
+//textColor
+#define DS_COLOR_TEXT_CONTENT_NIGHT                  DS_COLOR_HEXCOLOR(@"999999")
+#define DS_COLOR_TEXT_CONTENT_NORMAL                 DS_COLOR_HEXCOLOR(@"333333")
+
+
+
+//global && normal->night
+#define DS_GLOBAL_ISNIGHT                                       @"DS_GLOBAL_ISNIGHT"
+#define DS_COLOR_GLOBAL_TABBAR                                  DS_DAYANDNIGHT(DS_COLOR_TABBAR_NIGHT,DS_COLOR_TABBAR_NORMAL)
+#define DS_COLOR_GLOBAL_BACKGROUND                              DS_DAYANDNIGHT(DS_COLOR_BACKGROUND_NIGHT,DS_COLOR_BACKGROUND_NORMAL)
+#define DS_COLOR_GLOBAL_TEXT_CONTENT                            DS_DAYANDNIGHT(DS_COLOR_TEXT_CONTENT_NIGHT,DS_COLOR_TEXT_CONTENT_NORMAL)
+
+#define DDBundleVersion                   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+
+
+
+
+
+
+
+#define DS_APP_ISIPAD                   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define DS_APP_ISIPHONE                 (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define DS_APP_ISRETINA                 ([[UIScreen mainScreen] scale] >= 2.0)
+#define DS_APP_ISIPHONE_4               (DS_APP_ISIPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define DS_APP_ISIPHONE_5               (DS_APP_ISIPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define DS_APP_ISIPHONE_6               (DS_APP_ISIPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define DS_APP_ISIPHONE_6P              (DS_APP_ISIPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+
+#define DS_APP_OS_LATEST8                     [UIDevice currentDevice].systemVersion.floatValue >= 8.0
+#define DS_APP_OS_LATEST7                     [UIDevice currentDevice].systemVersion.floatValue >= 7.0
+#define DS_APP_OS_LATEST9                     [UIDevice currentDevice].systemVersion.floatValue >= 9.0
+
+
+#define DS_APP_DELEGATE                     ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+
+
+
+
+#define DS_APP_SIZE                         [[UIScreen mainScreen] bounds].size
+#define DS_APP_SIZE_SCALE                   [[UIScreen mainScreen] bounds].size.width / 375.0
+#define DS_APP_SIZE_WIDTH                   DS_APP_SIZE.width
+#define DS_APP_SIZE_HEIGHT                  DS_APP_SIZE.height
+
+
+
+
+#define DS_APP_FONT(fontSize)               [UIFont fontWithName:@"Helvetica" size:fontSize ]
+#define DS_APP_FONT_BOLD(fontSize)          [UIFont fontWithName:@"Helvetica-Bold" size:fontSize ]
+#define DS_APP_FONT_LIGHT(fontSize)         [UIFont fontWithName:@"Helvetica-Light" size:fontSize ]
+
+
+
+
+
+#define DSS_CHAR_PHONENUMBER                        @"0123456789"
+
+#define DS_APP_KEY_COOKIE                          @"DS_APP_KEY_COOKIE"        //用户cookie
+
+#define NOTI_APP_TABBARCHANGECOLOR                   @"NOTI_APP_TABBARCHANGECOLOR"
+
+#define NOTI_APP_RELOGIN                              @"NOTI_APP_RELOGIN"
+#define DD_CHANGE_CERTIFICATE_VER                   @"v3.0.1"
+
+
+
 
 
 

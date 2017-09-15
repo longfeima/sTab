@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "sViewController1.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<DsTabBarProtocol>
 
 @end
 
@@ -40,15 +40,60 @@
     UITabBarItem *homeItem=[[UITabBarItem alloc]initWithTitle:@"主页" image:[UIImage imageNamed:@"icon_tabbar_home_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_home_press"]];
     navHome.tabBarItem = homeItem;
     //    [tab addViewController:sort title:@"分类" image:@"tabbar_account@2x" selectImage:@"tabbar_account_press@2x"];
+    ViewController *pre1 = [[ViewController alloc]init];
+    UINavigationController *navPre1 = [[UINavigationController alloc]initWithRootViewController:pre1];
+    UITabBarItem *preItem1=[[UITabBarItem alloc]initWithTitle:@"预览" image:[UIImage imageNamed:@"icon_tabbar_pre_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_pre_press"]];
+    navPre1.tabBarItem = preItem1;
     
+    
+    sViewController1 *home1 = [[sViewController1 alloc]init];
+    UINavigationController *navHome1  = [[UINavigationController alloc]initWithRootViewController:home1];
+    UITabBarItem *homeItem1=[[UITabBarItem alloc]initWithTitle:@"主页" image:[UIImage imageNamed:@"icon_tabbar_home_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_home_press"]];
+    navHome1.tabBarItem = homeItem1;
     
 
-    self.rootTab.viewControllers = @[navPre, navHome];
+    self.rootTab.viewControllers = @[navPre, navHome, navPre1, navHome1];
     self.rootTab.tabBar.barStyle = UIBarStyleBlack;
     self.rootTab.tabBar.barTintColor = [UIColor whiteColor];
     self.rootTab.delegate = self;
     self.window.rootViewController = self.rootTab;
     
+}
+
+- (void)tab_selectAtIndex:(NSInteger)index{
+
+    switch (index) {
+        case 0:
+        {
+        }
+            break;
+        case 1:
+        {
+//            [DS_APP_DELEGATE.rootTab changeTabTitleWithTitlesArray:@[@"一", @"二", @"三", @"四"]];
+////            [DS_APP_DELEGATE.rootTab changeTabTitleWithTitlesArray:@[@"hello", @"world"]];
+//            /**
+//             @[@"http://ddsc2.b0.upaiyun.com/common/discover/banner_hehuoren.png",
+//             @"http://ddsc2.b0.upaiyun.com/common/discover/banner_bangzhu.png",
+//             @"http://ddsc2.b0.upaiyun.com/common/discover/icon_rongyuzizhi.png",
+//             @"http://ddsc2.b0.upaiyun.com/common/discover/icon_zaixiankefu.png"]
+//             
+//             */
+//            [DS_APP_DELEGATE.rootTab changeTabImageWithIconsArray:
+//                                    @[@"http://ddsc2.b0.upaiyun.com/common/discover/icon_shenqingxinyonka.png",
+//                                      @"http://ddsc2.b0.upaiyun.com/common/discover/icon_dianbishangcheng.png",
+//                                      @"http://ddsc2.b0.upaiyun.com/common/discover/icon_rongyuzizhi.png",
+//                                      @"http://ddsc2.b0.upaiyun.com/common/discover/icon_zaixiankefu.png"]
+//                                       SeletedImageWithIconsArray:
+//                                    @[@"http://ddsc2.b0.upaiyun.com/common/activityIcon/addInterest/icon__%E9%AB%98.png",
+//                                      @"http://ddsc2.b0.upaiyun.com/common/activityIcon/addInterest/icon__%E6%B8%A9.png",
+//                                      @"http://ddsc2.b0.upaiyun.com/common/activityIcon/addInterest/icon__%E5%8A%A0.png",
+//                                      @"http://ddsc2.b0.upaiyun.com/common/activityIcon/addInterest/icon__%E6%81%AF.png"]];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 
