@@ -417,11 +417,12 @@
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
         DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
-        itemV.backgroundColor = DS_COLOR_GLOBAL_TABBAR;
+        itemV.backgroundColor = [UIColor whiteColor];
         if (icons.count > i && [icons[i] length] > 0) {
             NSString *iconUrl = (i == self.selectedIndex ? selectedIcons[i] : icons[i]);
             [itemV.itemImageV sd_setImageWithURL:[NSURL URLWithString:iconUrl]];
         }
+        itemV.itemLb.textColor = (i == self.selectedIndex ? DS_COLOR_HEXCOLOR(@"FF834E") : DS_COLOR_HEXCOLOR(@"A7A7A7"));
     }
 }
 
