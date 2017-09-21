@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "sViewController1.h"
+#import "hello1.h"
+#import "world1.h"
 
 @interface AppDelegate ()<DsTabBarProtocol>
 
@@ -29,13 +31,13 @@
     
     self.rootTab = [[DsBaseTabBar alloc]init];
     
-    ViewController *pre = [[ViewController alloc]init];
+    hello1 *pre = [[hello1 alloc]init];
     UINavigationController *navPre = [[UINavigationController alloc]initWithRootViewController:pre];
     UITabBarItem *preItem=[[UITabBarItem alloc]initWithTitle:@"预览" image:[UIImage imageNamed:@"icon_tabbar_pre_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_pre_press"]];
     navPre.tabBarItem = preItem;
     
     
-    sViewController1 *home = [[sViewController1 alloc]init];
+    world1 *home = [[world1 alloc]init];
     UINavigationController *navHome  = [[UINavigationController alloc]initWithRootViewController:home];
     UITabBarItem *homeItem=[[UITabBarItem alloc]initWithTitle:@"主页" image:[UIImage imageNamed:@"icon_tabbar_home_nor"] selectedImage:[UIImage imageNamed:@"icon_tabbar_home_press"]];
     navHome.tabBarItem = homeItem;

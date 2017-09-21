@@ -18,6 +18,8 @@
 		1417917E1F41A5FD00C13C21 /* DsBaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417917B1F41A5FD00C13C21 /* DsBaseTabBar.m */; };
 		1417917F1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1417917D1F41A5FD00C13C21 /* UITabBarController+DsTabBarController.m */; };
 		141791821F41A61800C13C21 /* sViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 141791811F41A61800C13C21 /* sViewController1.m */; };
+		149545361F7394BE00EC2A5C /* hello1.m in Sources */ = {isa = PBXBuildFile; fileRef = 149545351F7394BE00EC2A5C /* hello1.m */; };
+		149545391F7394DA00EC2A5C /* world1.m in Sources */ = {isa = PBXBuildFile; fileRef = 149545381F7394DA00EC2A5C /* world1.m */; };
 		14C770DD1F6B7CB400847B03 /* DsUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C770DA1F6B7CB400847B03 /* DsUtils.m */; };
 		14C770DE1F6B7CB400847B03 /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C770DC1F6B7CB400847B03 /* RSAEncryptor.m */; };
 		14C770E21F6B7E6600847B03 /* UIColor+DDSC.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C770E11F6B7E6600847B03 /* UIColor+DDSC.m */; };
@@ -65,6 +67,10 @@
 		141791801F41A61800C13C21 /* sViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sViewController1.h; sourceTree = "<group>"; };
 		141791811F41A61800C13C21 /* sViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sViewController1.m; sourceTree = "<group>"; };
 		148F2A071F41B5E6003C4CAE /* DDGlobalConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDGlobalConstant.h; sourceTree = "<group>"; };
+		149545341F7394BE00EC2A5C /* hello1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hello1.h; sourceTree = "<group>"; };
+		149545351F7394BE00EC2A5C /* hello1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hello1.m; sourceTree = "<group>"; };
+		149545371F7394DA00EC2A5C /* world1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = world1.h; sourceTree = "<group>"; };
+		149545381F7394DA00EC2A5C /* world1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = world1.m; sourceTree = "<group>"; };
 		14C770D71F6B7C2C00847B03 /* DsTabBarProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsTabBarProtocol.h; sourceTree = "<group>"; };
 		14C770D91F6B7CB400847B03 /* DsUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DsUtils.h; sourceTree = "<group>"; };
 		14C770DA1F6B7CB400847B03 /* DsUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DsUtils.m; sourceTree = "<group>"; };
@@ -139,6 +145,10 @@
 				1417914D1F41A5A600C13C21 /* ViewController.m */,
 				141791801F41A61800C13C21 /* sViewController1.h */,
 				141791811F41A61800C13C21 /* sViewController1.m */,
+				149545341F7394BE00EC2A5C /* hello1.h */,
+				149545351F7394BE00EC2A5C /* hello1.m */,
+				149545371F7394DA00EC2A5C /* world1.h */,
+				149545381F7394DA00EC2A5C /* world1.m */,
 				1417914F1F41A5A600C13C21 /* Main.storyboard */,
 				141791521F41A5A600C13C21 /* Assets.xcassets */,
 				141791541F41A5A600C13C21 /* LaunchScreen.storyboard */,
@@ -400,10 +410,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149545361F7394BE00EC2A5C /* hello1.m in Sources */,
 				141791821F41A61800C13C21 /* sViewController1.m in Sources */,
 				1417914E1F41A5A600C13C21 /* ViewController.m in Sources */,
 				1417914B1F41A5A600C13C21 /* AppDelegate.m in Sources */,
 				14C770DD1F6B7CB400847B03 /* DsUtils.m in Sources */,
+				149545391F7394DA00EC2A5C /* world1.m in Sources */,
 				141791481F41A5A600C13C21 /* main.m in Sources */,
 				14C770DE1F6B7CB400847B03 /* RSAEncryptor.m in Sources */,
 				14C770E21F6B7E6600847B03 /* UIColor+DDSC.m in Sources */,

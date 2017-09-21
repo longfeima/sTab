@@ -125,29 +125,7 @@
         UIView *View = [tabBarSubArray objectAtIndex:i];
         View.hidden = YES;
     }
-}
-
-- (void)changeEnvironment{
-    NSArray *array = self.viewControllers;
-    for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
-        //        if (i == self.selectIndex) {
-        //            itemV.backgroundColor = DS_GLOBAL_TABBARCOLOR;
-        //        }else{
-        itemV.backgroundColor = [UIColor whiteColor];//DS_GLOBAL_TABBARCOLOR;
-        //        }
-    }
     
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeEnvironment) name:NOTI_APP_TABBARCHANGECOLOR object:nil];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
     NSArray *array = self.viewControllers;
     NSString *index = objc_getAssociatedObject(self, (__bridge const void *)(@"index"));
     [self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -184,6 +162,75 @@
         NSArray *selectedImages = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_SELECTIMAGES));
         [self changeTabImageWithIconsArray:images SeletedImageWithIconsArray:selectedImages];
     }
+    if (self.isChangeTabTitles) {
+        NSArray *titles = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_TITLE));
+        [self changeTabTitleWithTitlesArray:titles];
+    }
+
+    
+}
+
+- (void)changeEnvironment{
+    NSArray *array = self.viewControllers;
+    for (int i = 0; i < array.count; i++) {
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
+        //        if (i == self.selectIndex) {
+        //            itemV.backgroundColor = DS_GLOBAL_TABBARCOLOR;
+        //        }else{
+        itemV.backgroundColor = [UIColor whiteColor];//DS_GLOBAL_TABBARCOLOR;
+        //        }
+    }
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeEnvironment) name:NOTI_APP_TABBARCHANGECOLOR object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+//    NSArray *array = self.viewControllers;
+//    NSString *index = objc_getAssociatedObject(self, (__bridge const void *)(@"index"));
+//    [self.tabBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if ([obj isKindOfClass:[DsCustomBarItemView class]]) {
+//            [obj removeFromSuperview];
+//        }
+//    }];
+//    for (int i = 0; i<array.count; i++) {
+//        UINavigationController *nav = [array objectAtIndex:i];
+//        DsCustomBarItemView *itemView = [[DsCustomBarItemView alloc]initWithFrame:CGRectMake(i*DS_APP_SIZE_WIDTH/array.count, 0, DS_APP_SIZE_WIDTH/array.count, 49)];
+//        [itemView addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)]];
+//        [self.tabBar addSubview:itemView];
+//        itemView.itemImageV.image = nav.tabBarItem.image;
+//        itemView.itemLb.text = nav.tabBarItem.title;
+//        itemView.tag = TAB_BASEITEM_TAG + i;
+//        if (i==0 && !index.length) {
+//            itemView.itemImageV.image = nav.tabBarItem.selectedImage;
+//            itemView.itemLb.textColor = [UIColor blackColor];//DS_COLOR_HEXCOLOR(@"3b3c4e");
+//            self.selectIndex = 0;
+//            _preNav = nav;
+//            _preView =itemView;
+//        }
+//        if (index.length && [index integerValue] == i) {
+//            itemView.itemImageV.image = nav.tabBarItem.selectedImage;
+//            itemView.itemLb.textColor = DS_COLOR_HEXCOLOR(@"3b3c4e");
+//            self.selectIndex = [index integerValue];
+//            _preNav = nav;
+//            _preView =itemView;
+//        }
+//    }
+//    
+//    if (self.isChangeTabImagesAndSelectImages) {
+//        NSArray *images = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_IMAGES));
+//        NSArray *selectedImages = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_SELECTIMAGES));
+//        [self changeTabImageWithIconsArray:images SeletedImageWithIconsArray:selectedImages];
+//    }
+//    if (self.isChangeTabTitles) {
+//        NSArray *titles = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_TITLE));
+//        [self changeTabTitleWithTitlesArray:titles];
+//    }
     
 }
 
@@ -223,7 +270,29 @@
 - (void)setSelectIndex:(NSInteger)selectIndex{
     NSString *index = [NSString stringWithFormat:@"%ld",(long)selectIndex];
     objc_setAssociatedObject(self, (__bridge const void *)(@"index"), index, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    DsCustomBarItemView *itemV = [self.tabBar viewWithTag:selectIndex + TAB_BASEITEM_TAG];
+    UINavigationController *nav = [self.viewControllers objectAtIndex:selectIndex];
+    itemV.itemLb.textColor = DS_COLOR_HEXCOLOR(@"FF834E");
+    itemV.itemImageV.image = nav.tabBarItem.selectedImage;
+    
+    if (itemV == _preView) {
+        if (!self.isChangeTabImagesAndSelectImages)return;
+        //   return;
+    }
+    
+    _preView.itemLb.textColor = DS_COLOR_HEXCOLOR(@"A7A7A7");
+    _preView.itemImageV.image = _preNav.tabBarItem.image;
+    _preView = itemV;
+    _preNav = nav;
+    
+    
+    
     self.selectedIndex = selectIndex;
+    if (self.isChangeTabImagesAndSelectImages) {
+        NSArray *images = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_IMAGES));
+        NSArray *selectedImages = objc_getAssociatedObject(self, (__bridge const void*)(TAB_KEY_CHANGE_SELECTIMAGES));
+        [self changeTabImageWithIconsArray:images SeletedImageWithIconsArray:selectedImages];
+    }
 }
 
 
@@ -245,7 +314,7 @@
         return;
     }
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         if (i == showRedPointAtIndex) {
             itemV.redPoint.hidden = NO;
         }else{
@@ -262,7 +331,7 @@
     }
     for (int i = 0; i < showRedPointsAtIndexs.count; i++) {
         NSString *str = showRedPointsAtIndexs[i];
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         if ([str integerValue] == 1) {
             itemV.redPoint.hidden = NO;
         }else{
@@ -286,7 +355,7 @@
         temp = [number integerValue] > 0 ? number : @"";
     }
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         if (i == index && [number integerValue] > 0) {
             itemV.badgeLb.hidden = NO;
             itemV.badgeLb.text = temp;
@@ -312,7 +381,7 @@
             temp = [numbers[i] integerValue] > 0 ? numbers[i] : @"";
         }
         NSString *str = indexs[i];
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         if ([str integerValue] == 1 && [numbers[i] integerValue]) {
             itemV.badgeLb.hidden = NO;
             itemV.badgeLb.text = temp;
@@ -332,7 +401,7 @@
     NSArray *array = self.viewControllers;
     objc_setAssociatedObject(self, (__bridge const void *)(TAB_KEY_CHANGE_IMAGES), icons, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         itemV.backgroundColor = DS_COLOR_GLOBAL_TABBAR;
         if (icons.count > i && [icons[i] length] > 0) {
             [itemV.itemImageV sd_setImageWithURL:[NSURL URLWithString:icons[i]]];
@@ -347,7 +416,7 @@
     objc_setAssociatedObject(self, (__bridge const void *)(TAB_KEY_CHANGE_SELECTIMAGES), selectedIcons, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         itemV.backgroundColor = DS_COLOR_GLOBAL_TABBAR;
         if (icons.count > i && [icons[i] length] > 0) {
             NSString *iconUrl = (i == self.selectedIndex ? selectedIcons[i] : icons[i]);
@@ -364,7 +433,7 @@
     objc_setAssociatedObject(self, (__bridge const void *)(TAB_KEY_CHANGE_TITLE), titles, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         itemV.backgroundColor = DS_COLOR_GLOBAL_TABBAR;
         if (titles.count > i && [titles[i] length] > 0) {
             itemV.itemLb.text = titles[i];
@@ -387,7 +456,7 @@
     
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         UINavigationController *nav = self.viewControllers[i];
         if (!self.isChangeTabImages) {
             itemV.itemImageV.image = nav.tabBarItem.image;
@@ -406,7 +475,7 @@
     }
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         UINavigationController *nav = self.viewControllers[i];
         if (!self.isChangeTabImagesAndSelectImages) {
             itemV.itemImageV.image = nav.tabBarItem.image;
@@ -424,7 +493,7 @@
     }
     NSArray *array = self.viewControllers;
     for (int i = 0; i < array.count; i++) {
-        DsCustomBarItemView *itemV = [self.view viewWithTag:i + TAB_BASEITEM_TAG];
+        DsCustomBarItemView *itemV = [self.tabBar viewWithTag:i + TAB_BASEITEM_TAG];
         UINavigationController *nav = self.viewControllers[i];
         if (!self.isChangeTabTitles) {
             itemV.itemLb.text = nav.tabBarItem.title;

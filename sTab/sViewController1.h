@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface sViewController1 : UIViewController
+@property (nonatomic, assign) BOOL isPre;
 
 @end

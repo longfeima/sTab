@@ -26,7 +26,7 @@
 
     [super viewWillAppear:animated];
     
-    
+    DS_APP_DELEGATE.rootTab.selectIndex = 2;
     
 }
 
